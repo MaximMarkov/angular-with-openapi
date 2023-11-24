@@ -1,0 +1,3 @@
+{
+  "petstore": "npx @openapitools/openapi-generator-cli generate -i src/app/openapi/yaml/petstore.yaml -g typescript-angular -o src/app/openapi/clients/petstore --additional-properties=serviceSuffix=Api"
+}
