@@ -1,27 +1,19 @@
-# AngularTest
+# OpenAPI client generator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+This project shows how to set up openapi-generator in Angular application.
+
+## Setup
+
+Run `npm install` to install all necessary dependencies
+
+## OpenAPI
+
+Run `npm run generate-openapi-clients` that will generate client services in typescript.
+All clients are generated under `/openapi/clients` folder.
+
+Current example configured to use `/yaml/petstore.yaml` api and in order to add new service, simply add new entry to `/openapi/openapi-config.json` configuration file in key/value format where key is irrelevant and value should be in the following format: 
+`npx @openapitools/openapi-generator-cli generate -i src/app/openapi/yaml/YOUR_YAML_FILE.yaml -g typescript-angular -o src/app/openapi/clients/YOUR_NAME`
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
