@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { PetApi } from './openapi/clients/petstore/api/pet.service';
+import { Pet } from './openapi/clients/petstore';
 
 @Component({
   selector: 'app-root',
@@ -12,9 +13,10 @@ import { PetApi } from './openapi/clients/petstore/api/pet.service';
 })
 export class AppComponent {
   title = 'angular-test';
+  pets = signal<Pet[]>([]);
   constructor(private petApi: PetApi) {
     this.petApi.findPetsByStatus('available').subscribe((pets) => {
-      pets.forEach((pet) => console.log(`Receive pet ${pet.name}`));
+      this.pets.set(pets);
     });
   }
 }
