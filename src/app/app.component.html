@@ -1,13 +1,13 @@
 <main class="main">
   <div class="content">
     <h2>List of available pets</h2>
-    <ul>
+    <mat-list>
       @for (pet of pets(); track pet.name) {
-      <li>{{ pet.name }}</li>
+      <mat-list-item>{{ pet.name }}</mat-list-item>
       } @empty {
       <li>There are no items.</li>
       }
-    </ul>
+    </mat-list>
   </div>
 </main>
 
